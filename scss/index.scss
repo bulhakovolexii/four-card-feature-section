@@ -24,13 +24,14 @@ body {
 
 .container {
   flex-grow: 1;
+  display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 0 auto;
   padding: 0 $spacing-400;
 }
 
 .header {
-  justify-self: center;
   text-align: center;
   max-width: 520px;
   padding: 110px 0 0;
