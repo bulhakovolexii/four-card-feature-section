@@ -49,8 +49,6 @@ Users should be able to:
 For this project, I decided to challenge myself further by working without a Figma layout.
 Despite that, I managed to match the design and extract variables into a separate SCSS file, relying on experience from previous projects. Using a preprocessor was also recommended, though this wasn’t my first time applying one.
 
-I underestimated how difficult it is to maintain pixel-perfect design alignment without a Figma mockup — by the end, I honestly felt a bit burnt out, and it’s clear that fatigue affected my code quality. I’ll definitely need to revisit and refactor this project later
-
 What tools do you use to make life easier when a Figma layout isn’t available, or when it lacks a consistent design system?
 
 ### Continued development
