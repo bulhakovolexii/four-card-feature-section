@@ -1,0 +1,184 @@
+@use "design-system" as *;
+
+// root styles
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background-color: $white-100;
+}
+
+.container {
+  flex-grow: 1;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0 $spacing-400;
+}
+
+.header {
+  justify-self: center;
+  text-align: center;
+  max-width: 520px;
+  padding: 110px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-100;
+
+  &__slogan {
+    margin: 0;
+    @include text-preset-1;
+  }
+
+  &__title {
+    margin: 0;
+    @include text-preset-2;
+  }
+
+  &__subtitle {
+    margin: $spacing-100 0 0;
+    @include text-preset-3;
+  }
+}
+
+.cards {
+  margin: 72px auto;
+  max-width: 1120px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: $spacing-400;
+  align-items: center;
+  justify-items: center;
+}
+
+.card {
+  background-color: $white-50;
+  padding: $spacing-450 $spacing-400;
+  position: relative;
+  border-radius: $spacing-50;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 10%);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+  }
+
+  &:nth-child(1)::before {
+    background-color: $cyan;
+  }
+
+  &:nth-child(2)::before {
+    background-color: $red;
+  }
+
+  &:nth-child(3)::before {
+    background-color: $orange;
+  }
+
+  &:nth-child(4)::before {
+    background-color: $blue;
+  }
+
+  &__title {
+    @include text-preset-4;
+    margin: 0 0 10px 0;
+  }
+
+  &__subtitle {
+    @include text-preset-3;
+    color: $grey-400;
+    line-height: 150%;
+    font-size: 13px;
+    margin: 0 0 $spacing-450 0;
+  }
+
+  &__icon {
+    display: block;
+    align-self: flex-end;
+    margin-bottom: $spacing-100;
+  }
+}
+
+.card:first-child,
+.card:last-child {
+  grid-row: 1 / 3;
+}
+
+.card:last-child {
+  grid-column: 3;
+}
+
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card:first-child {
+    grid-row: 1;
+  }
+
+  .card:last-child {
+    grid-row: 4;
+  }
+
+  .card,
+  .card:last-child {
+    width: 100%;
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 676px) {
+  .header {
+    padding: 62px 0;
+    gap: 10px;
+    &__slogan {
+      font-size: 1.7rem;
+    }
+
+    &__title {
+      font-size: 1.6rem;
+      letter-spacing: 1px;
+    }
+  }
+
+  .cards {
+    margin: -2px;
+    gap: 33px;
+    margin-bottom: $spacing-400;
+  }
+
+  .card__icon {
+    margin-bottom: 8px;
+  }
+}
+
+// Footer styles from the “starter download”
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  width: 100%;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
